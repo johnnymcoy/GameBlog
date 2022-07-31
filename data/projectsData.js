@@ -1,20 +1,22 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Co-op Shooter Showcase',
+    description: `An Unreal Engine third person shooter game, solo developed by Curtis Bucciol `,
+    imgSrc: '/static/images/CoopShooterThumbnail.webp',
+    href: '/blog/coop-shooter/coop-shooter',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
+    title: 'Deso Cat',
+    description: `A game developed in 48 hours as a part of the "Game Makers Tool Kit" game jam 2021`,
+    imgSrc: '/static/images/GMTKthumbnail.webp',
     href: '/blog/the-time-machine',
-  },
+  },  
+//   {
+//     title: 'Co-op Shooter Showcase',
+//     description: `An Unreal Engine third person shooter game, solo developed by Curtis Bucciol `,
+//     imgSrc: '/static/images/google.png',
+//     href: 'https://www.google.com',
+//   },
 ]
 
 export default projectsData

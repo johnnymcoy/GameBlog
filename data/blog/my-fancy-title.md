@@ -4,7 +4,7 @@ date: '2021-01-31'
 tags: ['hello']
 draft: true
 summary:
-images: []
+images: ["/static/images/canada/maple.jpg"]
 ---
 
 Draft post which should not display

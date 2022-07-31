@@ -1,0 +1,63 @@
+---
+title: Deso Cat
+date: '2022-07-31'
+tags: ['unreal engine', 'complete', 'game', 'C++']
+draft: false
+summary: You are a cat, your owner is passed out, can you get them home in time? A game developed in 48 hours as a part of the "Game Makers Tool Kit" game jam 2021.
+images: ["/static/images/canada/maple.jpg"]
+
+---
+
+# O Canada
+
+The scenic lands of Canada featuring maple leaves, snow-capped mountains, turquoise lakes and Toronto. Take in the sights in this photo gallery exhibition and see how easy it is to replicate with some MDX magic and tailwind classes.
+
+Features images served using `next/image` component. The locally stored images are located in a folder with the following path: `/static/images/canada/[filename].jpg`
+
+Since we are using mdx, we can create a simple responsive flexbox grid to display our images with a few tailwind css classes.
+
+---
+
+# Gallery
+
+<div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    ![Maple](/static/images/canada/maple.jpg)
+  </div>
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    ![Lake](/static/images/canada/lake.jpg)
+  </div>
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    ![Mountains](/static/images/canada/mountains.jpg)
+  </div>
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    ![Toronto](/static/images/canada/toronto.jpg)
+  </div>
+</div>
+
+# Implementation
+
+```js
+<div className="flex flex-wrap -mx-2 overflow-hidden xl:-mx-2">
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    ![Maple](/static/images/canada/maple.jpg)
+  </div>
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    ![Lake](/static/images/canada/lake.jpg)
+  </div>
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    ![Mountains](/static/images/canada/mountains.jpg)
+  </div>
+  <div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    ![Toronto](/static/images/canada/toronto.jpg)
+  </div>
+</div>
+```
+
+With MDX v2, one can interleave markdown in jsx as shown in the example code.
+
+### Links
+
+<div>
+  Download the game on [Itch.io](https://itch.io/jam/gmtk-2021/rate/1085016)
+</div>
