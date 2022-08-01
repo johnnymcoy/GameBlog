@@ -8,6 +8,34 @@ twitter: https://twitter.com/curtisbucci
 linkedin: https://www.linkedin.com/in/curtis-bucciol
 github: https://github.com/johnnymcoy
 ---
+# Skills
+C++, Unreal Engine 4/5, Javascript, HTML, CSS, SASS, React, Redux, TypeScript, Three, Next, Git 
+
+# Timeline
+### 2022
+- Started learning Next
+- Started Portfolio v2 with Next, SASS, and three
+
+### 2021
+- Entered GMTK Game Jam [Itch.io](/blog/deso-cat/)
+- Started learning React
+   - Created portfolio in React
+   - Created React projects
+- Added Multiplayer to my Unreal Engine Game
+### 2020
+- Completed Unreal Engine Multiplayer course
+- Learnt Javascript
+- Started work as a Designer at Glamorama
+- Started planning my Unreal Engine Game
+### 2019
+- Completed Unreal Engine C++ course
+- Completed C++ course
+### 2015 - 2020
+- Finished my Bachelor of Design at Swinburne University
+   - Awarded Most outstanding Student
+- Had Animation "Spooky Circuits" in Melbourne Animation Festival
+- Started freelance work as a designer
+
 
 Curtis Bucciol is a creative designer / game developer from Melbourne. 
 I use C++, Javascript and Unreal Engine to create high-end interactive experiences and products. 

@@ -9,7 +9,7 @@ const projectsData = [
     title: 'Deso Cat',
     description: `A game developed in 48 hours as a part of the "Game Makers Tool Kit" game jam 2021`,
     imgSrc: '/static/images/GMTKthumbnail.webp',
-    href: '/blog/the-time-machine',
+    href: '/blog/deso-cat',
   },  
 //   {
 //     title: 'Co-op Shooter Showcase',
