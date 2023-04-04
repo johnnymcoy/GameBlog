@@ -1,5 +1,5 @@
 ---
-name: Johnny Mcoy // Curtis Bucciol
+name: Johnny Mcoy / Curtis Bucciol
 avatar: /static/images/CurtisBucci.webp
 occupation: Freelance Designer, Solo Game Developer
 # company: Stanford University
@@ -12,9 +12,15 @@ github: https://github.com/johnnymcoy
 C++, Unreal Engine 4/5, Javascript, HTML, CSS, SASS, React, Redux, TypeScript, Three, Next, Git 
 
 # Timeline
+
+### 2023
+- Working on Unreal Engine Game Demo
+    - Creating Seperate Plugins from game
+ 
+
 ### 2022
 - Started learning Next
-- Started Portfolio v2 with Next, SASS, and three
+- Started Portfolio v2 with Next, SASS, and three.js
 
 ### 2021
 - Entered GMTK Game Jam [Itch.io](/blog/deso-cat/)
