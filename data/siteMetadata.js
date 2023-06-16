@@ -1,14 +1,14 @@
 const siteMetadata = {
-  title: 'Bucci Blog',
+  title: 'Bucci Games Blog',
   author: 'Curtis Bucciol',
-  headerTitle: 'Bucci Blog',
+  headerTitle: 'Bucci Games Blog',
   description: 'A blog for all game projects from Bucci Games',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://buccigames.com',
   siteRepo: 'https://github.com/johnnymcoy/GameBlog',
-  siteLogo: '/static/images/logo.png',
-  image: '/static/images/avatar.png',
+  siteLogo: '/static/images/curtisbucci.webp',
+  image: '/static/images/curtisbucci.webp',
   socialBanner: '/static/images/twitter-card.png',
   email: 'mail@curtisbucciol.com',
   github: 'https://github.com/johnnymcoy',
@@ -16,7 +16,7 @@ const siteMetadata = {
 //   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com/channel/UCJWORuER75XEbw3Z3tHl50g',
   linkedin: 'https://www.linkedin.com/in/curtis-bucciol/',
-  locale: 'en-US',
+  locale: 'en-AU',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.

@@ -4,8 +4,10 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
+import Image from '@/components/Image'
 
 import NewsletterForm from '@/components/NewsletterForm'
+import Card from '@/components/Card'
 
 const MAX_DISPLAY = 5
 
@@ -21,6 +23,15 @@ export default function Home({ posts }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+            <div>
+                <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+                    Welcome!
+                </h1>
+            </div>
+            {/* <Image src={"/static/images/plugins/InteractionThumbnail.webp"} height={900} width={1600}/> */}
+            <div className="space-y-2 pt-0 pb-8">
+                <Card imgSrc={"/static/images/plugins/InteractionThumbnail.webp"}/>
+            </div>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
           </h1>
@@ -30,7 +41,7 @@ export default function Home({ posts }) {
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+          {/* {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
               <li key={slug} className="py-12">
@@ -77,10 +88,10 @@ export default function Home({ posts }) {
                 </article>
               </li>
             )
-          })}
+          })} */}
         </ul>
       </div>
-      {posts.length > MAX_DISPLAY && (
+      {/* {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
@@ -90,7 +101,7 @@ export default function Home({ posts }) {
             All Posts &rarr;
           </Link>
         </div>
-      )}
+      )} */}
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
           <NewsletterForm />

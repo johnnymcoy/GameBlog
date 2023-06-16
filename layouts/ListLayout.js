@@ -1,9 +1,11 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata, { description } from '@/data/siteMetadata'
 import { useState } from 'react'
+import Image from '@/components/Image'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
+import Card from '@/components/Card'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
@@ -15,11 +17,11 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
-
+  console.log(posts.images);
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+        <div className="space-y-2 pt-6 pb-8 md:space-y-5 ">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
@@ -47,41 +49,73 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             </svg>
           </div>
         </div>
-        <ul>
+        {/* <ul> */}
+        <div className="container py-12">
+        <div className="-m-4 flex flex-wrap">
+
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, tags, images } = frontMatter
             return (
-              <li key={slug} className="py-4">
-                <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                  <dl>
-                    <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date)}</time>
-                    </dd>
-                  </dl>
-                  <div className="space-y-3 xl:col-span-3">
-                    <div>
-                      <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
-                          {title}
-                        </Link>
-                      </h3>
-                      <div className="flex flex-wrap">
-                        {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
-                        ))}
-                      </div>
-                    </div>
-                    <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                      {summary}
-                    </div>
-                  </div>
-                </article>
-              </li>
+                <Card key={slug}
+                    className="w-full"
+                    title={title}
+                    description={description}
+                    // description={`${description}, ${formatDate(date)}`}
+                    date={formatDate(date)}
+                    imgSrc={"/static/images/plugins/ChatSystemThumbnail.webp"}
+                    href={`/blog/${slug}`}
+                    />
+                // <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+                // All Game Related Projects
+                    /* <dl>
+                        <dt className="sr-only">Published on</dt>
+                        <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                        <time dateTime={date}>{formatDate(date)}</time>
+                        </dd>
+                    </dl> */
+                // </p>
+
+
+            //     <li key={slug} className="py-4 ">
+
+            //     <Link href={`/blog/${slug}`} className="a">
+            //         <article className="space-x-10 ">
+            //         <div className="space-y-3 x1:col-span-3">
+            //             {/* <Card imgSrc={"/static/images/plugins/ChatSystemThumbnail.webp"} title={title} description={summary}> */}
+            //                 {/* <Image src={"/static/images/plugins/ChatSystemThumbnail.webp"} width={140} height={70} /> */}
+            //             {/* </Card> */}
+            //             {/* </div> */}
+            //             <div>
+            //             <h3 className="text-2xl font-bold leading-8 tracking-tight">
+            //                 {/* <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100"> */}
+            //                 {title}
+            //                 {/* </Link> */}
+            //             </h3>
+            //             <dl>
+            //                 <dt className="sr-only">Published on</dt>
+            //                 <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+            //                 <time dateTime={date}>{formatDate(date)}</time>
+            //                 </dd>
+            //             </dl>
+            //             <div className="flex flex-wrap">
+            //                 {tags.map((tag) => (
+            //                     <Tag key={tag} text={tag} />
+            //                     ))}
+            //             </div>
+            //             </div>
+            //             <div className="prose max-w-none text-gray-500 dark:text-gray-400">
+            //             {summary}
+            //             </div>
+            //         </div>
+            //         </article>
+            //     </Link>
+            //    </li>
             )
           })}
-        </ul>
+          </div>
+          </div>
+        {/* </ul> */}
       </div>
       {pagination && pagination.totalPages > 1 && !searchValue && (
         <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
