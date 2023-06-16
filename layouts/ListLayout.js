@@ -13,11 +13,10 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
-
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
-  console.log(posts.images);
+  console.log(displayPosts[0]);
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -56,14 +55,15 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags, images } = frontMatter
+            if(images != null){console.log(images[0])}
             return (
                 <Card key={slug}
                     className="w-full"
                     title={title}
-                    description={description}
+                    description={summary}
                     // description={`${description}, ${formatDate(date)}`}
                     date={formatDate(date)}
-                    imgSrc={"/static/images/plugins/ChatSystemThumbnail.webp"}
+                    imgSrc={images != null ? images[0] : "/static/images/plugins/MenuSystemThumbnail.webp"}
                     href={`/blog/${slug}`}
                     />
                 // <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
