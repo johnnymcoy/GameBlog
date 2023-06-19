@@ -1,0 +1,234 @@
+---
+title: 'Space Adventure Blog Posts'
+date: '2023-04-03'
+tags: ['unreal engine', 'complete', 'game', 'C++']
+draft: true
+summary: 'Unreal Engine 4 Third Person Shooter Adventure Game.'
+---
+
+
+
+14/6/2023
+Quest Component work 
+Quest BP Function Library
+
+13/06/2023
+Quest System Temp Widget Layout
+Modals, Popups, Button Prompts
+
+09/06/2023
+Chat System Component C++
+All base functionality working
+Replication needed
+
+07/06/2023
+Melee Component v1.0 Finished
+Not fully replicated
+
+6/06/2023
+Saving/Loading games
+
+26/06/2023
+Weapon Effect Component
+
+25/06/2023
+Hitmarkers, Weapon Reticle, Tracer, Ammo Widgets from Lyra 
+
+18/05/2023
+Projectile Weapons, Homing Missiles
+
+17/05/2023
+Projecile Weapon Framework, New Overlay States
+
+15/05/2023
+New AI Tasks and Health Fixes
+
+12/05/2023
+AI Perception 
+
+10/05/2023
+Health bar Animations, Radial Health bars
+
+9/05/2023 
+AI Picking up weapons, AI Linetrace, AI Reloading 
+
+07/05/2023
+Character Customization v0.5 Layout
+
+
+20/04/2023
+AI EQS, Behavor tree work
+
+17/04/2023
+Epic Online Services + Menus
+
+11/04/2023
+Upgraded Unreal Version 4.26 - 5.1
+
+# Current Version (0.235)
+
+#### Health 
+- Fixed Health bar not updating on Clients
+- Cleaned up Health code
+- Fixed bug with Health bar visibility when first looked at
+
+
+#### AI
+- Added in Prediction for Shooting
+- Added in more Services (Select Target Enemy, Select Weapon)
+- Added Decorators (Has Line of Sight)
+- Added Tasks (Shoot at Target, Set Focus, Reload, Pickup Object, Last Known Location)
+- Added AI Traits Component, for all AI details
+
+
+
+_Updated 20/04/2023_
+#### AI
+- Started creating Servies Tasks and EQS for all functions
+- Created a Behavor tree for Companion AI, Enemy AI both controlled by a Complete AI tree
+- Copied some of the behavor tree from the Epic Lyra Game Sample 
+
+
+_Updated 20/04/2023_
+#### AI
+- Created default health bar for enemies
+- Added in health bar for Online players 
+- Health bar only shows up when being looked at
+
+#### Health
+- Worked on enemy health bar
+
+#### Physical Animation
+Found Engine bug that only will show physical animation when close to a character: solutions, wait for fix, retarget all animations
+
+_Updated 05/04/2023_
+#### Player Controller
+- Connected All Enhanced Inputs for Custom Controller and Pawn
+
+_Updated 05/04/2023_
+#### Player Controller
+- Created Enhanced Inputs for Unreal 5.1
+#### Footstep Component
+- Footstep FX and sounds for custom physical materials 
+
+## Version (0.136)
+_Updated 05/04/2023_
+#### Physical Animation Component
+- Fixing up bugs with Custom Physical Animation Component
+#### Menu System 
+- Setting up all button inputs
+- Working on UI
+- BUG Focus is not set when game opens 
+- Animation for selection doesn't correctly play when changing from mouse to keyboard
+
+
+## Version (0.135)
+_Updated 04/04/2023_
+#### Physical Animation Component
+- Worked on a Custom Physical Animation Component
+- Added in all functions for hit reactions
+
+
+## Version (0.135)
+_Updated 26/03/2023_
+### Interaction
+- Outlines on interactable objects
+### Companions
+- Companion Widget menu for selecting options
+
+### Version (0.135) 
+_Updated 25/03/2023_
+#### Companions
+- Companion Widget now has context of what is being looked at
+
+
+### Version (0.135)
+_Updated 24/03/2023_
+#### Companions
+- Companion Widget now has context of what is being looked at
+
+### Version (0.135)
+_Updated 20/03/2023_
+#### Companions
+- Fixed blackboard issue with companions not moving correctly
+- Completed layout for Companion AI
+
+### Version (0.135)
+_Updated 06/03/2023_
+#### Menu System
+- Layout work
+
+### Version (0.135)
+_Updated 05/03/2023_
+#### Menu System
+- Menu System Plugin Created
+- Menu System Outline Started
+
+### Version (0.135)
+_Updated 03/03/2023_
+#### Weapon System
+- Weapon throwing properly replicated 
+
+### Version (0.135)
+_Updated 28/02/2023_
+#### Weapon System
+- Weapon component replicated 
+
+### Version (0.135)
+_Updated 27/02/2023_
+#### Weapon System
+- Weapon throwing functions 
+
+### Version (0.135)
+_Updated 27/02/2023_
+#### Weapon System
+- Weapon widget binding
+- Created a seperate Shooting Component for Players (PlayerShootingComponent) 
+- Weapon widget work
+
+### Version (0.135)
+_Updated 16/02/2023_
+#### Weapon System
+- Weapon inventory
+- Created a seperate Shooting Component for Players (PlayerShootingComponent) 
+
+### Version (0.135)
+_Updated 15/02/2023_
+#### Weapon System
+- Reloading
+- Handling multiple weapons 
+
+
+### Version (0.135)
+_Updated 14/02/2023_
+#### Weapon System
+- Weapon framework
+
+### Version (0.135)
+_Updated 9/02/2023_
+#### Weapon System
+- Shooting component work
+
+
+
+
+# Version (0.135)
+_Updated 08/08/2022_
+### Animation
+- New Custom Physical Animation component which is more realistic and less glitchy looking
+- Physics assets updated with better collision and Profiles
+
+
+## Version 0.12
+_Updated 25/07/2022_
+### UI
+- Options Menu Added 
+
+## Version 0.12
+_Updated 18/07/2022_
+### UI 
+- Menu Layout Complete
+- Selection Buttons for main menu all working
+### AI 
+- Added in Walking/Running State change
+

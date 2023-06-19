@@ -7,7 +7,7 @@ import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
 import Card from '@/components/Card'
 
-export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
+export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination, homepage }) {
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
@@ -18,12 +18,13 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
   console.log(displayPosts[0]);
   return (
-    <>
+    <>  
+    {/* //todo Add in homepage version  */}
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5 ">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+      {!homepage && <div className="space-y-2 pt-6 pb-8 md:space-y-5 ">
+          {title && <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
-          </h1>
+          </h1>}
           <div className="relative max-w-lg">
             <input
               aria-label="Search articles"
@@ -47,7 +48,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               />
             </svg>
           </div>
-        </div>
+        </div>}
         {/* <ul> */}
         <div className="container py-12">
         <div className="-m-4 flex flex-wrap">

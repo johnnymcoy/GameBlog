@@ -1,8 +1,10 @@
 import Image from './Image'
 import Link from './Link'
 
-const Card = ({ title, description, imgSrc, href, date }) => (
-  <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+const Card = ({ title, description, imgSrc, href, date, size }) => 
+(
+    // todo Add different size options for the cards
+  <div className={`${size=="Large" ? 'md p-2' : 'md p-4 md:w-1/2'}`} style={{ maxWidth:`${size=="Large" ? '1088px' : "544px"}`}}>
     <div
       className={`${
         imgSrc && 'h-full'
@@ -15,8 +17,8 @@ const Card = ({ title, description, imgSrc, href, date }) => (
               alt={title}
               src={imgSrc}
               className="object-cover object-center md:h-36 lg:h-48"
-              width={544}
-              height={306}
+              width={`${size="Large" ? 1088 : 544}`}
+              height={`${size="Large" ? 612 : 306}`}
             />
           </Link>
         ) : (

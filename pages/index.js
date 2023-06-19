@@ -9,7 +9,11 @@ import Image from '@/components/Image'
 import NewsletterForm from '@/components/NewsletterForm'
 import Card from '@/components/Card'
 
-const MAX_DISPLAY = 5
+import projectsData from '@/data/projectsData'
+import ListLayout from '@/layouts/ListLayout'
+
+
+const MAX_DISPLAY = 2
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -18,6 +22,12 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+
+    let LatestProject;
+    if(projectsData.length != 0)
+    {
+        LatestProject = projectsData[0];
+    }
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -28,9 +38,19 @@ export default function Home({ posts }) {
                     Welcome!
                 </h1>
             </div>
-            {/* <Image src={"/static/images/plugins/InteractionThumbnail.webp"} height={900} width={1600}/> */}
+                <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+                    Check out the Latest Unreal Project
+                </p>
+            {LatestProject &&
+                <Card 
+                    title={LatestProject.title} 
+                    description={LatestProject.description}
+                    imgSrc={LatestProject.imgSrc}
+                    href={LatestProject.href}
+                    size="Large"
+                />
+            }
             <div className="space-y-2 pt-0 pb-8">
-                <Card imgSrc={"/static/images/plugins/InteractionThumbnail.webp"}/>
             </div>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
@@ -39,8 +59,15 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
+          <ListLayout
+                posts={posts.slice(0, MAX_DISPLAY)}
+                initialDisplayPosts={posts.slice(0, MAX_DISPLAY)}
+                homepage
+                // pagination={0}
+                // title="All Posts"
+            />
           {/* {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
@@ -89,7 +116,7 @@ export default function Home({ posts }) {
               </li>
             )
           })} */}
-        </ul>
+        </div>
       </div>
       {/* {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
