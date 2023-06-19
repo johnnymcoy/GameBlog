@@ -16,16 +16,16 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
-  console.log(displayPosts[0]);
+//   console.log(displayPosts[0]);
   return (
     <>  
     {/* //todo Add in homepage version  */}
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-      {!homepage && <div className="space-y-2 pt-6 pb-8 md:space-y-5 ">
+      <div className={homepage ? "" :"space-y-2 pt-6 pb-8 md:space-y-5 "}>
           {title && <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>}
-          <div className="relative max-w-lg">
+          {!homepage &&  <div className="relative max-w-lg">
             <input
               aria-label="Search articles"
               type="text"
@@ -47,8 +47,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
+          </div>}
           </div>
-        </div>}
         {/* <ul> */}
         <div className="container py-12">
         <div className="-m-4 flex flex-wrap">
@@ -56,7 +56,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags, images } = frontMatter
-            if(images != null){console.log(images[0])}
+            // if(images != null){console.log(images[0])}
             return (
                 <Card key={slug}
                     className="w-full"

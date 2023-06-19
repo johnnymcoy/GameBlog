@@ -13,7 +13,7 @@ import projectsData from '@/data/projectsData'
 import ListLayout from '@/layouts/ListLayout'
 
 
-const MAX_DISPLAY = 2
+const MAX_DISPLAY = 2;
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -59,13 +59,13 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>
-        <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        {/* <div className="divide-y divide-gray-200 dark:divide-gray-700"> */}
           {!posts.length && 'No posts found.'}
           <ListLayout
                 posts={posts.slice(0, MAX_DISPLAY)}
                 initialDisplayPosts={posts.slice(0, MAX_DISPLAY)}
                 homepage
-                // pagination={0}
+                pagination={""}
                 // title="All Posts"
             />
           {/* {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
@@ -117,7 +117,7 @@ export default function Home({ posts }) {
             )
           })} */}
         </div>
-      </div>
+      {/* </div> */}
       {/* {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
@@ -131,7 +131,7 @@ export default function Home({ posts }) {
       )} */}
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+          {/* <NewsletterForm /> */}
         </div>
       )}
     </>
