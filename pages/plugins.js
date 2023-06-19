@@ -3,6 +3,9 @@ import {pluginsData} from '@/data/projectsData'
 import Card from '@/components/Card'
 import { PageSEO } from '@/components/SEO'
 
+export const POSTS_PER_PAGE = 6
+
+
 export default function Plugins() {
   return (
     <>
