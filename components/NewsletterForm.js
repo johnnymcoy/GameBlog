@@ -10,7 +10,6 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
 
   const subscribe = async (e) => {
     e.preventDefault()
-    console.log(inputEl.current.value)
     const res = await fetch(`/api/${siteMetadata.newsletter.provider}`, {
       body: JSON.stringify({
         email: inputEl.current.value,
