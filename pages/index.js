@@ -12,8 +12,7 @@ import Card from '@/components/Card'
 import projectsData from '@/data/projectsData'
 import ListLayout from '@/layouts/ListLayout'
 
-
-const MAX_DISPLAY = 2;
+const MAX_DISPLAY = 2
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -22,36 +21,33 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-
-    let LatestProject;
-    if(projectsData.length != 0)
-    {
-        LatestProject = projectsData[0];
-    }
+  let LatestProject
+  if (projectsData.length != 0) {
+    LatestProject = projectsData[0]
+  }
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-            <div>
-                <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-                    Welcome!
-                </h1>
-            </div>
-                <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-                    Check out the Latest Unreal Project
-                </p>
-            {LatestProject &&
-                <Card 
-                    title={LatestProject.title} 
-                    description={LatestProject.description}
-                    imgSrc={LatestProject.imgSrc}
-                    href={LatestProject.href}
-                    size="Large"
-                />
-            }
-            <div className="space-y-2 pt-0 pb-8">
-            </div>
+        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
+          <div>
+            <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+              Welcome!
+            </h1>
+          </div>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+            Check out the Latest Unreal Project
+          </p>
+          {LatestProject && (
+            <Card
+              title={LatestProject.title}
+              description={LatestProject.description}
+              imgSrc={LatestProject.imgSrc}
+              href={LatestProject.href}
+              size="Large"
+            />
+          )}
+          <div className="space-y-2 pb-8 pt-0"></div>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
           </h1>
@@ -60,15 +56,15 @@ export default function Home({ posts }) {
           </p>
         </div>
         {/* <div className="divide-y divide-gray-200 dark:divide-gray-700"> */}
-          {!posts.length && 'No posts found.'}
-          <ListLayout
-                posts={posts.slice(0, MAX_DISPLAY)}
-                initialDisplayPosts={posts.slice(0, MAX_DISPLAY)}
-                homepage
-                pagination={""}
-                // title="All Posts"
-            />
-          {/* {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
+        {!posts.length && 'No posts found.'}
+        <ListLayout
+          posts={posts.slice(0, MAX_DISPLAY)}
+          initialDisplayPosts={posts.slice(0, MAX_DISPLAY)}
+          homepage
+          pagination={''}
+          // title="All Posts"
+        />
+        {/* {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
               <li key={slug} className="py-12">
@@ -116,7 +112,7 @@ export default function Home({ posts }) {
               </li>
             )
           })} */}
-        </div>
+      </div>
       {/* </div> */}
       {/* {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
@@ -131,7 +127,7 @@ export default function Home({ posts }) {
       )} */}
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
-          {/* <NewsletterForm /> */}
+          <NewsletterForm />
         </div>
       )}
     </>
