@@ -126,10 +126,19 @@ export default function Home({ posts }) {
         </div>
       )} */}
       {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+    <div className="flex items-center justify-center pt-4">
+        <div className="pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">
+
+            <div className="mt-2 flex w-full rounded-md shadow-sm sm:ml-3 sm:mt-0">
+                <Link href={"https://buttondown.email/johnny-mcoy"} target="_blank" rel="noopener noreferrer"
+                    className={`w-full rounded-md bg-primary-500 px-4 py-2 font-medium text-white sm:py-0 hover:bg-primary-700 dark:hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black`}>
+                    Sign up to my Newsletter
+                </Link>
+            </div>
+          </div>
+        {/* <NewsletterForm /> */}
         </div>
-      )}
+        )}
     </>
   )
 }
