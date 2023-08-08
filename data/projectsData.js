@@ -14,7 +14,7 @@ const projectsData = [
   {
     title: 'Sea Shifters',
     description: `My entry to the "Game Makers Tool Kit" game jam 2023`,
-    imgSrc: '/static/images/GMTK2023thumbnail.webp',
+    imgSrc: '/static/images/GMTK2023Thumbnail.webp',
     href: '/blog/sea-shifters',
   },
   {
