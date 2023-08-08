@@ -1,6 +1,7 @@
 import '@/css/tailwind.css'
 import '@/css/prism.css'
 import 'katex/dist/katex.css'
+import Script from 'next/script'
 
 import '@fontsource/inter/variable-full.css'
 
@@ -26,6 +27,14 @@ export default function App({ Component, pageProps }) {
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>
+      {/* <Script type="text/javascript"
+                sc_project={12901413} 
+                sc_invisible={1}
+                sc_security={665e0953}
+                />
+            <Script type="text/javascript"
+            src="https://www.statcounter.com/counter/counter.js"
+            async />       */}
     </ThemeProvider>
   )
 }
