@@ -7,7 +7,7 @@ import TOCInline from './TOCInline'
 import Pre from './Pre'
 import { BlogNewsletterForm } from './NewsletterForm'
 import Link from '@/components/Link'
-
+import VideoPlayer from './custom/Video'
 
 export const MDXComponents = {
   Image,
@@ -15,6 +15,7 @@ export const MDXComponents = {
   a: CustomLink,
   pre: Pre,
   BlogNewsletterForm: BlogNewsletterForm,
+  VideoPlayer: VideoPlayer,
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../layouts/${layout}`).default
     return <Layout {...rest} />

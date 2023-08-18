@@ -1,0 +1,31 @@
+---
+title: 'Thumbnails, AI Patrol & Detection'
+date: '2023-08-02'
+tags: ['unreal engine', 'quests', 'game', 'C++']
+draft: false
+summary: 'August Update.'
+images: ['/static/images/blog/spaceAdventure/2023/JulyUpdateThumbnails.webp']
+---
+
+# July Update
+
+## Thumbnails
+
+I created an in-game camera that can take thumbnail pictures.
+It has an empty level where you load which item you want a thumbnail of, and render out a 2D texture.
+
+This saves time going into a photo editing program and creating each thumbnail one by one.
+
+<div>
+  ![Gun Thumbnails in weapon
+  slots](/static/images/blog/spaceAdventure/2023/JulyUpdateThumbnails.webp)
+</div>
+--- ## AI Patrol Points AI now can follow paths. The paths can also be bridged to other paths. Each path
+point can have a certain time for the AI to wait till they move to the next. The AI can also go forward
+or down the path depending on how many points they've passed.
+<VideoPlayer loop autoPlay muted src="/static/vids/july/PatrolPoints.webm" />
+--- ## Detection Meter Once the AI can see the player, a Detection meter will start to fill up, once
+filled, the AI will become hostile. If the player leaves the view of the AI, if not detected, the meter
+will then start to empty. If the meter was over 75% when the player left the view, the AI will investigate
+what they saw.
+<VideoPlayer loop autoPlay muted src="/static/vids/july/DetectionMeter.webm" />

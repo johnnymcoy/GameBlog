@@ -47,6 +47,7 @@ export default function Home({ posts }) {
               size="Large"
             />
           )}
+
           <div className="space-y-2 pb-8 pt-0"></div>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
@@ -126,8 +127,8 @@ export default function Home({ posts }) {
         </div>
       )} */}
       {siteMetadata.newsletter.provider !== '' && (
-    <div className="flex items-center justify-center pt-4">
-        <div className="pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">
+        <div className="flex items-center justify-center pt-4">
+          {/* <div className="pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">
 
             <div className="mt-2 flex w-full rounded-md shadow-sm sm:ml-3 sm:mt-0">
                 <Link href={"https://buttondown.email/johnny-mcoy"} target="_blank" rel="noopener noreferrer"
@@ -135,10 +136,10 @@ export default function Home({ posts }) {
                     Sign up to my Newsletter
                 </Link>
             </div>
-          </div>
-        {/* <NewsletterForm /> */}
+          </div> */}
+          {/* <NewsletterForm /> */}
         </div>
-        )}
+      )}
     </>
   )
 }
