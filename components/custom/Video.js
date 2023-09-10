@@ -1,17 +1,27 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import CSS from './Video.module.css'
 
 function VideoPlayer({ src, autoPlay, loop, muted, controls }) {
   const VideoRef = useRef()
+  const [videoPaused, setVideoPaused] = useState(false)
+  const Classes = videoPaused ? `${CSS.videoPlayer} ${CSS.paused}` : `${CSS.videoPlayer}`
+
   function ClickPlayer() {
     if (VideoRef.current.paused) {
+      setVideoPaused(false)
       VideoRef.current.play()
     } else {
       VideoRef.current.pause()
+      setVideoPaused(true)
     }
   }
   return (
-    <div className={CSS.videoPlayer} onClick={ClickPlayer}>
+    <div className={Classes} onClick={ClickPlayer}>
+      {videoPaused && (
+        <div className={CSS.pauseOverlay}>
+          <div className={CSS.pauseIcon}>||</div>
+        </div>
+      )}
       <video
         ref={VideoRef}
         autoPlay={autoPlay}
