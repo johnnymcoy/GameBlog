@@ -1,0 +1,44 @@
+---
+title: 'Replay Clips & NPC optimizations'
+date: '2023-10-08'
+tags: ['unreal engine', 'multiplayer', 'game', 'C++']
+draft: false
+summary: 'October Update.'
+images: ['/static/images/blog/spaceAdventure/2023/OctoberUpdate.webp']
+---
+
+# October Update
+
+## Replay System
+
+Within Unreal Engine there is a system build for recording and playing back clips.
+This system relies on the network "Replication".
+As my game is already build for online play, this means adding in the Replay system was very simple.
+
+Players can now record clips which are saved locally and only take up a few kb.
+This will allow players to share clips online send to friends.
+
+<div>
+  ![A Game screenshot of the player running toward an NPC character, the screenshot also features
+  the play, pause and other video controls, showing the in game video
+  player.](/static/images/blog/spaceAdventure/2023/OctoberUpdate.webp)
+</div>
+
+---
+
+# NPC optimizations
+
+## AI Enhancements
+
+In Space Plunder you will be encounter a lot of enemy and friendly NPCs.
+After Spawning in multiple AI characters I noticed a significant drop in performance. I used this opportunity to start optimizing the AI.
+
+I first converted all AI Behavours to C++, then started disabling features of the AI depending on how far from the player they were.
+So NPCs that are in the distance don't need there animations running at full quailty.
+
+The NPCs now run much smoother allowing for players to have more chaos on screen.
+
+<div>
+  ![The Player standing on a platform, infront of him the is 10s of the exact same NPC character,
+  all standing around.](/static/images/blog/spaceAdventure/2023/OctoberUpdate.NPCs.webp)
+</div>

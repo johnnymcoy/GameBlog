@@ -1,0 +1,56 @@
+---
+title: 'Menu Fixes & Lobbies, Weapon Updates & Quest System Overhall'
+date: '2023-12-08'
+tags: ['unreal engine', 'multiplayer', 'game', 'C++']
+draft: false
+summary: 'December Update.'
+images: ['/static/images/blog/spaceAdventure/2023/DecemberUpdate.CrosshairPistol.webp']
+---
+
+# December Update
+
+## Weapon Updates
+
+### Damage Numbers
+
+Adding to the hitmarkers are damage numbers.
+Originally just added to help with debugging how much damage each weapon was doing, it is quite a trend at the moment that people like.
+I'm unsure if i'll keep these in the final game.
+
+### Fire Modes
+
+New fire modes have been added to the weapons.
+Before only full auto and single fire were available.
+Now Burst fire and Charged fire are available, creating more possibilites and variation with different weapons.
+
+### Damage Range
+
+Weapons also now take the range into account when applying damage.
+So when the player is really close to an NPC they will get the full damage amount, and the futher they move away, the more the damage will falloff.
+
+### Crosshairs
+
+Dynamic Crosshairs have been added, which change to each individual weapon.
+The reticle will be the calcualted bullet spread, and when moving will change as your accuracy changes.
+
+<div>
+  ![The Player Character aiming a weapon at a wall. A weapon Crosshair, a circle with four lines at
+  each 90 degres, can be seen in the center of the
+  screen.](/static/images/blog/spaceAdventure/2023/DecemberUpdate.CrosshairPistol.webp)
+</div>
+<div>
+  ![The Player Character aiming a weapon at a wall. A weapon Crosshair, a rounded circle with four
+  lines at each 90 degres inside the rounded circle, can be seen in the center of the
+  screen](/static/images/blog/spaceAdventure/2023/DecemberUpdate.CrosshairRifle.webp)
+</div>
+
+## Menu Modals + Fixes
+
+I've added in Online & Offline Profiles, which feature player stats, save games and more.
+GameMode Rules and Scoring has been made more simple so that it can be customized by the player when choosing a level.
+Players can Host and Join Lobbies instead of having to join directly into a match.
+
+## Quest System Overhall
+
+Going back through the Quest System with new eyes I was able refactor a lot of the code into much more readable and simple functions.
+I've also added in Timed Objectives, the ability to fail Objectives by doing them incorrectly, (eg. Killing a team member during a quest) & ore.
