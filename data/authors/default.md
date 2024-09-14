@@ -2,7 +2,7 @@
 name: Johnny Mcoy / Curtis Bucciol
 avatar: /static/images/CurtisBucci.webp
 occupation: Freelance Designer, Solo Game Developer
-# company: Stanford University
+# company: Bucci Games
 email: mail@curtisbucciol.com
 twitter: https://twitter.com/curtisbucci
 linkedin: https://www.linkedin.com/in/curtis-bucciol
@@ -13,10 +13,20 @@ C++, Unreal Engine 4/5, Javascript, HTML, CSS, SASS, React, Redux, TypeScript, T
 
 # Timeline
 
+### 2024
+
+- Showcased a playable Demo for Space Plunder 
+
 ### 2023
 - Working on Unreal Engine Game Demo
+<<<<<<< Updated upstream
     - Creating Seperate Plugins from game
  
+=======
+  - Creating Seperate Plugins from game
+
+- Created this blog in Next.js to showcase updates and features
+>>>>>>> Stashed changes
 
 ### 2022
 - Started learning Next
