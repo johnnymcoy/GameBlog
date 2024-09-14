@@ -1,0 +1,46 @@
+---
+title: 'Teams, Scoreboard, Recoil & Respawning'
+date: '2023-09-08'
+tags: ['unreal engine', 'multiplayer', 'game', 'C++']
+draft: false
+summary: 'September Update.'
+images: ['/static/images/blog/spaceAdventure/2023/SeptemberUpdate.Teams.webp']
+---
+
+# September Update
+
+## Teams & Respawning
+
+In multiplayer matches, players are now automaticly sorted into teams.
+Each spawn point is associated with a team and the team is spawned in after the "pre-match" timer has ended.
+When players die, they respawn after a given time, depending on if it was an enemy or team kill.
+
+<div>
+  ![Four seperate game windows, two with players colored green standing on a green block, the other
+  two red on a red block](/static/images/blog/spaceAdventure/2023/SeptemberUpdate.Teams.webp)
+</div>
+
+---
+
+## Scoreboard
+
+The scoreboard contains all the multiplayer match details.
+Player XP, kills, assists, deaths, kill/death ratio and the players ping.
+The Current player is highlighted in blue.
+On the left of all the players stats is a Team summary, with the team score, goal score and team name.
+
+<div>
+  ![Scoreboard for all the Multiplayer
+  Teams](/static/images/blog/spaceAdventure/2023/SeptemberUpdate.Scoreboard.webp)
+</div>
+
+---
+
+## Recoil Animation
+
+After stumbling on the marketplace item "Shooter Recoil Animation", I found it would fit well within my project.
+It's an easy to implement plugin, which saves a great amount of time on animations.
+
+[Link for the Plugin](https://www.unrealengine.com/marketplace/en-US/product/procedural-recoil-animation-system)
+
+<VideoPlayer loop autoPlay muted src="/static/vids/september/Recoil.webm" />

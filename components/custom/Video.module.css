@@ -1,0 +1,128 @@
+.videoPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 750px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.paused {
+  cursor: pointer;
+  /* opacity: 0.75; */
+}
+
+.pauseOverlay {
+  /* display: flex; */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.pauseIcon {
+  position: absolute;
+  color: white;
+  opacity: 1;
+  align-items: center;
+  top: calc(50% - 16px);
+  left: calc(50% - 8px);
+  height: 32px;
+  width: 16px;
+  font-weight: bold;
+}
+
+.video {
+  width: 100%;
+  margin: 0 !important;
+}
+
+.playerControls {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%) translateY(0px);
+  transition: 0.3s;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.videoPlayer:hover .playerControls {
+  transform: translateY(0%) translateY(-5px);
+}
+
+.playButton {
+  width: 10%;
+  border: none;
+  background: black;
+  color: var(--font-primary);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+.playButton:focus {
+  outline: none;
+}
+
+.time {
+  font-size: 0.75rem;
+  color: var(--font-primary);
+  width: 15%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.volumeSlider {
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 0;
+  padding: 0 10px;
+  width: 5%;
+  transition: 0.3s;
+}
+
+.volumeSlider:hover {
+  width: 15%;
+}
+
+.volumeSlider:focus {
+  outline: none;
+}
+
+.volumeSlider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: black;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  background: var(--programming-color);
+  cursor: pointer;
+}
+
+.videoProgress {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 10px;
+  transition: 0.1s;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.videoProgressFilled {
+  width: 50%;
+  background: var(--programming-color);
+}
+
+.videoProgress:hover {
+  height: 15px;
+}

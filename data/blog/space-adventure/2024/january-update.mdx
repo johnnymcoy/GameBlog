@@ -1,0 +1,62 @@
+---
+title: 'Weapon Attachments, Stealth Takedowns & Interaction Prompts'
+date: '2024-01-10'
+tags: ['unreal engine', 'multiplayer', 'game', 'C++']
+draft: false
+summary: 'January Update.'
+images: ['/static/images/blog/spaceAdventure/2024/JanuaryUpdateThumbnail.webp']
+---
+
+# January Update
+
+## Weapon Attachments
+
+<div>
+  ![A Low Poly Gun Model with Multiple Attachments on it, A silencer, Grip and Optical
+  sight.](/static/images/blog/spaceAdventure/2024/JanuaryUpdateThumbnail.webp)
+</div>
+
+Current List of Weapon Attachments include:
+
+- Lights
+- Knifes
+- Suppressors/Silencers
+- Optics
+- Magazines
+- & More
+
+All modify the base stats of the weapon with attachments like Knifes adding to the melee damage, Optics adding accuracy, and Magazines increasing the Clip Size and Max Ammo.
+
+---
+
+## Stealth Takedowns
+
+Stealth Takedowns have been added.
+When the player is undetected they are able to perform a Stealth Takedown behind an NPC.
+The player can choose between Lethal and non-Lethal.
+
+<VideoPlayer loop autoPlay muted src="/static/vids/2024/january/StealthTakedown.webm" />
+
+The player can also choose to hide bodies from being found.
+
+I've added in a way for the player to "Grab" physics objects and move them around, this way if players want to remain hidden they will have to hide any bodies.
+
+This also works on characters who have just been knocked out, or fallen over, which results in funny scenarios or characters waking up while being held in the air.
+
+<VideoPlayer loop autoPlay muted src="/static/vids/2024/january/DraggingCharacters.webm" />
+
+---
+
+## Interaction Button Prompts
+
+<div>
+  ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+  showing the player that they can pick up the
+  weapon.](/static/images/blog/spaceAdventure/2024/JanuaryUpdate.ButtonPrompt.webp)
+</div>
+
+The old method I had for interacting with objects involved the character having to be aiming, and having the crosshair directly over the object.
+
+This would make it not clear how to interact, and what objects where interactable.
+
+Moving away from the old method the new method involes showing prompts when the player is close to an interactable object and having a progress bar for interacting to prevent accidental pickups.

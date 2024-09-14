@@ -1,0 +1,42 @@
+---
+title: 'Aim Assist, Outlines & Killfeed'
+date: '2023-08-18'
+tags: ['unreal engine', 'multiplayer', 'game', 'C++']
+draft: false
+summary: 'Mid August Update.'
+images: ['/static/images/blog/spaceAdventure/2023/AugustUpdateOutlines2.webp']
+---
+
+# August Update 2
+
+## Interactable outlines
+
+To help the player know what items can be interacted with,
+I've added an outline when they player is hovered over the item while aiming.
+This is made on a simple post process material, which means each item doesn't need to be modified.
+
+## <VideoPlayer loop autoPlay muted src="/static/vids/august/Outlines.webm" />
+
+## Aim Assist
+
+Aim Assist has been added in mainly to help with controller users and people who aren't as skilled at precise aiming.
+Taking some insperation from games like Red Dead Redemption 2, when you hold the aim button down at a character, your camera will lock on to them.
+
+<VideoPlayer loop autoPlay muted src="/static/vids/august/AimAssist.webm" />
+<VideoPlayer loop autoPlay muted src="/static/vids/august/AimAssist2.webm" />
+
+---
+
+## Multiplayer Modes & Kill Feed
+
+A base multiplayer mode has been created, adding in Teams, a Score HUD, and a killfeed.
+The killfeed gets the players Usernames, as well as how they died, which will be respresented with an icon between the names.
+
+<VideoPlayer loop autoPlay muted src="/static/vids/august/KillFeed.webm" />
+
+---
+
+## Steam Multiplayer
+
+Current the game is working online over Steam as well as Epic Online Servies.
+Some more testing will be needed before I can start sending out demos.
