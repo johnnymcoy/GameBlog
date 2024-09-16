@@ -23,14 +23,10 @@ C++, Unreal Engine 4/5, Javascript, HTML, CSS, SASS, React, Redux, TypeScript, T
 
 - Entered GMTK Game Jam [Itch.io](/blog/sea-shifters/)
 - Working on Unreal Engine Game Demo
-  <<<<<<< Updated upstream - Creating Seperate Plugins from game
-
-=======
 
 - Creating Seperate Plugins from game
 
 - Created this blog in Next.js to showcase updates and features
-  > > > > > > > Stashed changes
 
 ### 2022
 
