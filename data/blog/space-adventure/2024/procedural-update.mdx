@@ -1,7 +1,7 @@
 ---
 title: 'Procedural Generation'
 date: '2024-08-11'
-tags: ['unreal engine', 'game', 'C++']
+tags: ['unreal engine', 'procedural', 'C++']
 draft: false
 summary: 'Getting a small demo ready for online testing.'
 images: ['/static/images/blog/spaceAdventure/2024/procedural/Procedural_01.webp']
@@ -9,25 +9,23 @@ images: ['/static/images/blog/spaceAdventure/2024/procedural/Procedural_01.webp'
 
 # Generating Endless Ship layouts
 
-Following the a great tutorial series on youtube,
-I was able to code a Procedural Generation system that could easily create an endless amount of ship layouts.
+After following a great YouTube tutorial series, I developed a procedural 
+generation system capable of creating an endless variety of ship layouts.
 
-The system works by spawning a specified number of rooms, in a random pattern.
+The system spawns a specified number of rooms in a random pattern, connects 
+them with doors, and fills any gaps with walls
 
 <VideoPlayer loop autoPlay muted src="/static/vids/2024/procedural/ProceduralGen_03.webm" />
----{' '}
+
+---
 
 ## Options
 
-AI Spawn points
-Weapon Spawns
-Loot Spawns
-Door Spawns
+I wanted to avoid making all the ships feel the same, 
+while also ensuring they weren’t entirely random.
 
-Stairs
-Special Rooms
-
-Random Seeds
+Certain 'special' rooms, like the airlock, will only 
+spawn once per ship to prevent awkward or unbalanced layouts.
 
 <div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
   <div>
@@ -37,8 +35,16 @@ Random Seeds
 
 ---
 
-## In Game
+## Testing
+
+The generator creates ships with a consistent style, 
+which adjusts based on difficulty.
+
+Elements like AI difficulty and loot spawning can be easily adjusted, 
+helping playtesters avoid boredom from repeated levels.
+
+The next demo version will feature procedural ships as playable levels.
 
 <VideoPlayer loop autoPlay muted src="/static/vids/2024/procedural/ProceduralGen_02.webm" />
 
-Link to Youtube Video
+[Link to Youtube Video](https://www.youtube.com/watch?v=4ddbnQIuwAM)
