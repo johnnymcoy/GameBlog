@@ -1,0 +1,143 @@
+---
+title: 'Public Demo Showcase'
+date: '2024-04-13'
+tags: ['unreal engine', 'demo', 'multiplayer', 'C++']
+draft: false
+summary: 'A Single Level Demo Playable at Pause Menu Cafe.'
+images: ['/static/images/blog/spaceAdventure/2024/DemoUpdate09.webp']
+---
+
+# The First Playable Demo
+
+On April 13th [Pause Menu Bar and Cafe](https://www.pausemenu.com.au/) in Fitzroy hosted 
+a showcase of local indie games. I saw this as the perfect opportunity 
+to set a deadline and release the demo to the public. While the crunch 
+to finish everything was intense, the result was worth it.
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+    <VideoPlayer loop autoPlay muted src="/static/vids/2024/showcase/Demo_Live_03_Horizontal.webm" />
+    ![Two people sitting at a table holding xbox controllers playing split-screen on a small monitor.](/static/images/blog/spaceAdventure/2024/DemoUpdate09.webp)
+</div>
+
+---
+
+## How it went
+
+The public demo was a fantastic experience. 
+Seeing so many people play my game (many of whom had only heard a little about it), was incredibly rewarding. 
+Players were impressed by the amount of work, appreciated the split-screen feature, 
+and enjoyed its goofy style.
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className=" w-full overflow-hidden xl:my-1 xl:w-1/2 xl:px-2">
+    <VideoPlayer loop autoPlay muted src="/static/vids/2024/showcase/Demo_Live_01_Vertical.webm" />
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    <VideoPlayer loop autoPlay muted src="/static/vids/2024/showcase/Demo_Live_02_Vertical.webm" />
+  </div>
+</div>
+
+---
+
+
+## What I learnt
+
+**Watching the game was just as fun for many as playing it** 
+
+A surprising number of people enjoyed watching others play, which also helped generate more interest.
+
+**Players were more forgiving of bugs than expected**
+
+Bugs like enemies spawning in walls were often seen as funny. 
+Most players didn’t notice bugs unless they halted their progress.
+
+**Players were less forgiving when they weren’t given clear instructions**
+
+I added last-minute prompts for 'melee' and 'swap weapon' controls, 
+but players were still confused about other controls. 
+They disliked not knowing the reload button and wanted the gun to automatically reload when empty.
+
+**The hacking minigame frustrated players** 
+
+I added the unfinished hacking game last minute, 
+placing it at the start next to a locked door. 
+Unfortunately, this backfired, as players found the minigame 
+too confusing and it gave them a bad first impression.
+
+**Co-op gameplay was a huge hit**
+
+Players had significantly more fun playing in co-op. 
+This has always been a priority for me, 
+as someone who grew up playing co-op games with my siblings. 
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className=" w-full overflow-hidden xl:my-1 xl:w-1/2 xl:px-2">
+    ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+    showing the player that they can pick up the
+    weapon.](/static/images/blog/spaceAdventure/2024/DemoUpdate02.webp)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+    showing the player that they can pick up the
+    weapon.](/static/images/blog/spaceAdventure/2024/DemoUpdate04.webp)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+    showing the player that they can pick up the
+    weapon.](/static/images/blog/spaceAdventure/2024/DemoUpdate06.webp)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+    showing the player that they can pick up the
+    weapon.](/static/images/blog/spaceAdventure/2024/DemoUpdate07.webp)
+  </div>
+</div>
+
+---
+
+## Feedback
+
+After a great demo, there is still a lot of work to be done. 
+
+**Controller/Button Prompts**
+
+The prompts shouldn’t always be on the screen since players tend to ignore them after a while.
+They need to appear when players would likely need to use them. 
+
+**AI could detect players through walls**
+
+The first thing every player did was test the controls. 
+Which would unknowingly set off the AI before even proplerly starting the game.
+People would open the first door in the game, and have multiple enemies waiting there for them,
+ making it feel unfair and like "bad AI". 
+
+**Hacking Minigame** 
+
+Needs a complete rework. Until then, it should be removed.
+
+**Unclear objectives** 
+
+Not all objectives had waypoints, which made it unclear where 
+to go and how to complete them.
+Most people found them to hard and just resorted to killing everyone. 
+
+**Other Small Changes**
+
+Turrets should change color when disabled.
+
+When a room is hacked/taken over, it should visually change color.
+
+Shielded Enemies needed to have visual feedback when shot.
+
+It was hard to tell when players were on low health, and they would die "out of nowhere", 
+a low health indicator is needed.
+
+Co-op should have a waypoint for Player 2.
+
+Anything that had health but *didn't* have a health bar was confusing to players, 
+people didn't know when turrets were dead.
+
+Doors should be lockable and also visible that it's locked.
+
+There needed to be an indication of score/credits so people could feel more rewarded for 
+doing more objectives.

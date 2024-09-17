@@ -1,8 +1,8 @@
 const projectsData = [
   {
-    title: 'Space Adventure Game',
+    title: 'Space Plunder',
     description: `An Unreal Engine third person shooter game, solo developed by Curtis Bucciol `,
-    imgSrc: '/static/images/plugins/InteractionThumbnail.webp',
+    imgSrc: '/static/images/blog/spaceAdventure/2024/Demo_01.webp',
     href: '/blog/space-adventure/main',
   },
   {

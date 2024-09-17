@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react'
-
 import siteMetadata from '@/data/siteMetadata'
 
 const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
@@ -7,30 +6,67 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
   const [error, setError] = useState(false)
   const [message, setMessage] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+  const [manualLink, setManualLink] = useState(false)
 
   const subscribe = async (e) => {
     e.preventDefault()
-    const res = await fetch(`/api/${siteMetadata.newsletter.provider}`, {
-      body: JSON.stringify({
-        email: inputEl.current.value,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+    const buttondownRoute = `${process.env.NEXT_PUBLIC_BUTTONDOWN_SUBSCRIBE_URL}`
+    const form = e.target
+    const formData = new FormData(form)
+    // const email = inputEl.current.value;
+    fetch(buttondownRoute, {
       method: 'POST',
+      body: formData,
     })
-
-    const { error } = await res.json()
-    if (error) {
-      setError(true)
-      setMessage('Your e-mail address is invalid or you are already subscribed!')
-      return
+      .then((response) => {
+        if (response.ok) {
+          console.log(response)
+          inputEl.current.value = ''
+          setError(false)
+          setSubscribed(true)
+          setManualLink(false)
+          setMessage('Successfully! 🎉 You are now subscribed.')
+        } else {
+          console.log('Error: ' + response)
+          inputEl.current.value = ''
+          setError(true)
+          setSubscribed(false)
+          setMessage('Failed to subscribe, You can manually subscribe here')
+          setManualLink(true)
+        }
+      })
+      .catch((error) => {
+        console.log('Error: ' + error)
+        inputEl.current.value = ''
+        setError(true)
+        setSubscribed(true)
+        setManualLink(false)
+        setMessage('Failed to subscribe, Error: ' + error.message)
+      })
+    //- The old regular method by the template
+    //- above method doesn't use the buttondown API, as it's possible to subscribe free without
+    {
+      // const res = await fetch(`pages/api/${siteMetadata.newsletter.provider}`, {
+      //   body: JSON.stringify({
+      //     email: inputEl.current.value,
+      //   }),
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   method: 'POST',
+      // // })
+      // const { error } = await res.json()
+      // if (error) {
+      //   setError(true)
+      //   setMessage('Your e-mail address is invalid or you are already subscribed!')
+      //   console.log(error)
+      //   return
+      // }
+      // inputEl.current.value = ''
+      // setError(false)
+      // setSubscribed(true)
+      // setMessage('Successfully! 🎉 You are now subscribed.')
     }
-
-    inputEl.current.value = ''
-    setError(false)
-    setSubscribed(true)
-    setMessage('Successfully! 🎉 You are now subscribed.')
   }
 
   return (
@@ -66,7 +102,21 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
         </div>
       </form>
       {error && (
-        <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">{message}</div>
+        <div className="flex w-72 flex-col pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96 sm:flex-row">
+          {message}
+        </div>
+      )}
+      {manualLink && (
+        <a
+          href={'https://buttondown.com/api/emails/embed-subscribe/johnny-mcoy'}
+          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          aria-label="manual subscription link"
+          target="_blank"
+          without
+          rel="noreferrer"
+        >
+          Manual Link
+        </a>
       )}
     </div>
   )

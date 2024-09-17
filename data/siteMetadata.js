@@ -10,7 +10,7 @@ const siteMetadata = {
   siteLogo: '/static/images/curtisbucci.webp',
   image: '/static/images/curtisbucci.webp',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'mail@curtisbucciol.com',
+  email: 'curtis@buccigames.com',
   github: 'https://github.com/johnnymcoy',
 //   twitter: 'https://twitter.com/Twitter',
 //   facebook: 'https://facebook.com',

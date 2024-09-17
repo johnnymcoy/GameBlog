@@ -6,11 +6,12 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import Image from '@/components/Image'
 
-import NewsletterForm from '@/components/NewsletterForm'
+import NewsletterForm, { BlogNewsletterForm } from '@/components/NewsletterForm'
 import Card from '@/components/Card'
 
 import projectsData from '@/data/projectsData'
 import ListLayout from '@/layouts/ListLayout'
+import WakaTimeChart from './api/WakatimeChart'
 
 const MAX_DISPLAY = 2
 
@@ -36,7 +37,7 @@ export default function Home({ posts }) {
             </h1>
           </div>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Check out the Latest Unreal Project
+            Check out the Latest on my Upcoming Game
           </p>
           {LatestProject && (
             <Card
@@ -50,20 +51,19 @@ export default function Home({ posts }) {
 
           <div className="space-y-2 pb-8 pt-0"></div>
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest
+            Latest Blog Posts
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
           </p>
         </div>
-        {/* <div className="divide-y divide-gray-200 dark:divide-gray-700"> */}
         {!posts.length && 'No posts found.'}
         <ListLayout
           posts={posts.slice(0, MAX_DISPLAY)}
           initialDisplayPosts={posts.slice(0, MAX_DISPLAY)}
           homepage
           pagination={''}
-          // title="All Posts"
+          title=""
         />
         {/* {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
@@ -114,8 +114,7 @@ export default function Home({ posts }) {
             )
           })} */}
       </div>
-      {/* </div> */}
-      {/* {posts.length > MAX_DISPLAY && (
+      {posts.length > MAX_DISPLAY && (
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
@@ -125,19 +124,29 @@ export default function Home({ posts }) {
             All Posts &rarr;
           </Link>
         </div>
-      )} */}
+      )}
+      <ul>
+        {/* --tw-divide-opacity: 1;
+  border-color: rgb(64 64 64 / var(--tw-divide-opacity)); */}
+      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+
+        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Code stats
+          </h1>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+            {"Hours spend coding project "}
+          </p>
+          <div className="flex justify-end text-base font-medium leading-6">
+            <WakaTimeChart />
+        </div>
+        </div>
+        </div>
+
+      </ul>
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
-          {/* <div className="pb-1 text-lg font-semibold text-gray-800 dark:text-gray-100">
-
-            <div className="mt-2 flex w-full rounded-md shadow-sm sm:ml-3 sm:mt-0">
-                <Link href={"https://buttondown.email/johnny-mcoy"} target="_blank" rel="noopener noreferrer"
-                    className={`w-full rounded-md bg-primary-500 px-4 py-2 font-medium text-white sm:py-0 hover:bg-primary-700 dark:hover:bg-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 dark:ring-offset-black`}>
-                    Sign up to my Newsletter
-                </Link>
-            </div>
-          </div> */}
-          {/* <NewsletterForm /> */}
+          <NewsletterForm />
         </div>
       )}
     </>

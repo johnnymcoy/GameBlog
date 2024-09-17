@@ -8,15 +8,17 @@ export default async (req, res) => {
   try {
     const API_KEY = process.env.BUTTONDOWN_API_KEY
     const buttondownRoute = `${process.env.BUTTONDOWN_API_URL}subscribers`
+    // const buttondownRoute = `${process.env.BUTTONDOWN_API_URL}`
     const response = await fetch(buttondownRoute, {
-      body: JSON.stringify({
-        email,
-      }),
+      method: 'POST',
       headers: {
+        accept: 'application/json',
         Authorization: `Token ${API_KEY}`,
         'Content-Type': 'application/json',
       },
-      method: 'POST',
+      body: JSON.stringify({
+        email,
+      }),
     })
 
     if (response.status >= 400) {

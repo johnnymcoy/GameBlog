@@ -1,0 +1,44 @@
+---
+title: 'Debuggers'
+date: '2024-07-04'
+tags: ['unreal engine', 'debug', 'C++']
+draft: false
+summary: 'Adding some visual debuggers.'
+images: ['/static/images/blog/spaceAdventure/2024/Debug/Debug_01.webp']
+---
+
+# Creating Visual Debuggers
+
+As the project grows, it becomes increasingly difficult 
+to debug and pinpoint the source of issues, especially in multiplayer. 
+To address this, I started developing additional tools to streamline 
+the in-game debugging process.
+
+<VideoPlayer loop autoPlay muted src="/static/vids/2024/debug/Debug_01.webm" />
+
+--- 
+
+## The Tools
+
+While the engine includes basic debugging tools, 
+I explored them further and began developing custom tools of my own.
+
+One tool I developed is a simple extension that allows me to 
+select which actor to debug, represented by a visual box in 3D space.
+
+I also created a tool that displays all the variables of my shooting component, 
+both locally and on the server. This makes it easier to identify which 
+variables aren't being correctly synchronized for different players.
+
+<VideoPlayer loop autoPlay muted src="/static/vids/2024/debug/Debug_02.webm" />
+
+--- 
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+    <div className=" w-full overflow-hidden xl:my-1 xl:w-1/2 xl:px-2">
+        ![A low poly Character with text over each limb displaying the health of each limb.](/static/images/blog/spaceAdventure/2024/Debug/Debug_01.webp)
+    </div>
+    <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+        ![A low poly Character looking at a weapon on the ground, a bunch of text is overlaying the screen with details on the weapon type, distance and highlighting the weapon.](/static/images/blog/spaceAdventure/2024/Debug/Debug_02.webp)
+    </div>
+</div>

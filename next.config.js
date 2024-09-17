@@ -4,15 +4,25 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
+  default-src 'self' https://wakatime.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' http://giscus.app https://va.vercel-scripts.com https://wakatime.com;
   style-src 'self' 'unsafe-inline';
-  img-src * blob: data:;
-  media-src 'self';
+  img-src * blob: data: https://wakatime.com;
+  media-src 'self' https://wakatime.com;
   connect-src *;
   font-src 'self';
-  frame-src giscus.app
+  object-src 'none' https://wakatime.com;
+  frame-src giscus.app 'self' https://wakatime.com
 `
+//script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
+// script-src-elem 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
+
+
+//   script-src-elem 'self' https://wakatime.com;
+//   img-src 'self' https://wakatime.com;
+//   frame-src 'self' https://wakatime.com;
+//   connect-src 'self' https://wakatime.com;
+
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -53,6 +63,17 @@ const securityHeaders = [
 ]
 
 module.exports = withBundleAnalyzer({
+    images: {
+        domains: ["wakatime.com"],
+        remotePatterns: [
+            {
+              protocol: 'https',
+              hostname: 'wakatime.com',
+              port: '',
+              pathname: '/*',
+            },
+        ]
+    },
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
