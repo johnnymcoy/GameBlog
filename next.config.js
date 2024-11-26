@@ -11,7 +11,7 @@ const ContentSecurityPolicy = `
   media-src 'self' https://wakatime.com;
   connect-src *;
   font-src 'self';
-  frame-src giscus.app https://curtisbucciol.com https://buccigames.com https://wakatime.com; 
+  frame-src giscus.app https://curtisbucciol.com https://buccigames.com https://wakatime.com http://localhost:3000; 
   object-src 'none' https://wakatime.com;
 `
 //script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
