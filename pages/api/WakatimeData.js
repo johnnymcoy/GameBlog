@@ -14,7 +14,7 @@
 //           console.error("Error fetching WakaTime data with JSONP:", err);
 //           return;
 //         }
-//         console.log(response);          
+//         console.log(response);
 //         setData(response); // Store the data in state
 //       }
 //     );
@@ -34,12 +34,11 @@
 
 // export default WakaTimeData;
 
-
 // // import React, { useEffect, useState } from 'react'
 
 // // const WakaTimeData = () => {
 // //   const [data, setData] = useState(null)
-  
+
 // //   useEffect(() => {
 // //       // Using the fetch API to get data
 // //       fetch(

@@ -11,18 +11,16 @@ const ContentSecurityPolicy = `
   media-src 'self' https://wakatime.com;
   connect-src *;
   font-src 'self';
+  frame-src giscus.app https://curtisbucciol.com https://buccigames.com https://wakatime.com; 
   object-src 'none' https://wakatime.com;
-  frame-src giscus.app 'self' https://wakatime.com
 `
 //script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
 // script-src-elem 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;
-
 
 //   script-src-elem 'self' https://wakatime.com;
 //   img-src 'self' https://wakatime.com;
 //   frame-src 'self' https://wakatime.com;
 //   connect-src 'self' https://wakatime.com;
-
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -38,7 +36,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   {
     key: 'X-Frame-Options',
-    value: 'DENY',
+    value: 'SAMEORIGIN',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {
@@ -63,17 +61,17 @@ const securityHeaders = [
 ]
 
 module.exports = withBundleAnalyzer({
-    images: {
-        domains: ["wakatime.com"],
-        remotePatterns: [
-            {
-              protocol: 'https',
-              hostname: 'wakatime.com',
-              port: '',
-              pathname: '/*',
-            },
-        ]
-    },
+  images: {
+    domains: ['wakatime.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'wakatime.com',
+        port: '',
+        pathname: '/*',
+      },
+    ],
+  },
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
   eslint: {
