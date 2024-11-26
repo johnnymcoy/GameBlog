@@ -1,7 +1,7 @@
 ---
 title: 'Steam Playtest'
 date: '2024-09-11'
-tags: ['unreal engine', 'demo', 'multiplayer', 'game', 'C++']
+tags: ['unreal engine', 'demo', 'multiplayer', 'C++']
 draft: false
 summary: 'Getting a small demo ready for online testing.'
 images: ['/static/images/blog/spaceAdventure/2024/Demo_02_splitscreen.webp']
@@ -9,8 +9,16 @@ images: ['/static/images/blog/spaceAdventure/2024/Demo_02_splitscreen.webp']
 
 # Public Demo Playtest
 
-Following the a great tutorial series on youtube,
-I was able to code a Procedural Generation system that could easily create an endless amount of ship layouts.
+After launching a public demo earlier in the year, I wanted to release it online for more people to try.
+However, there were several areas I felt needed improvement first.
+Players at home will most likely try the single-player mode,
+where they may be more sensitive to bugs or poor mechanics.
+
+After resolving most bugs and reaching a stable version,
+I realized the demo still needed more replayability.
+Playing the same ship level repeatedly can get dull,
+so I implemented a procedural generation system to create varied ship layouts.
+With this enhancement, I’ve decided to release the demo on Steam.
 
 <div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
   <div>
@@ -19,15 +27,22 @@ I was able to code a Procedural Generation system that could easily create an en
     weapon.](/static/images/blog/spaceAdventure/2024/Demo_02_splitscreen.webp)
   </div>
 </div>
---- # Steam Playtest
 
-# Features
+---
 
-Online Co-op
+## Steam Playtest
 
-Procedurally Generated levels.
+To enhance replayability, I’ve added a few more features to the demo.
 
-Objectives
-Most things working
+The demo now features an end-game score that players can submit to a public Steam leaderboard.
 
-# Sign Up
+Steam will also track various stats, which can unlock achievements.
+
+By pressing F5, players can submit a feedback form to report bugs or provide general feedback.
+
+The randomly generated levels are based on a seed,
+allowing players to replay specific levels or share them with friends.
+
+Online co-op is functional, but since it hasn’t been fully
+tested with other players, I expect there will still be
+several bugs to address

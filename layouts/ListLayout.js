@@ -60,7 +60,7 @@ export default function ListLayout({
         </div>
         <ul>
           <div className="container py-12">
-            <div className="-m-4 flex flex-wrap">
+            <div className="-m-4 flex flex-wrap justify-center">
               {!filteredBlogPosts.length && 'No posts found.'}
               {displayPosts.map((frontMatter) => {
                 const { slug, date, title, summary, tags, images } = frontMatter
