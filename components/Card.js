@@ -9,7 +9,7 @@ const Card = ({ title, description, imgSrc, href, date, size }) =>
       className={`${
         imgSrc && 'h-full'
       }  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700`}
-    >
+    >  
       {imgSrc &&
         (href ? (
           <Link href={href} aria-label={`Link to ${title}`}>
@@ -30,7 +30,7 @@ const Card = ({ title, description, imgSrc, href, date, size }) =>
             height={306}
           />
         ))}
-        
+    
       <div className="p-6">
       <p className="prose mb-0 text-gray-500 dark:text-gray-400">{date}</p>
         <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">

@@ -8,6 +8,7 @@ import Pre from './Pre'
 import { BlogNewsletterForm } from './NewsletterForm'
 import Link from '@/components/Link'
 import VideoPlayer from './custom/Video'
+import SteamLink from './custom/SteamLink'
 
 export const MDXComponents = {
   Image,
@@ -16,6 +17,7 @@ export const MDXComponents = {
   pre: Pre,
   BlogNewsletterForm: BlogNewsletterForm,
   VideoPlayer: VideoPlayer,
+  SteamLink : SteamLink,
   wrapper: ({ components, layout, ...rest }) => {
     const Layout = require(`../layouts/${layout}`).default
     return <Layout {...rest} />

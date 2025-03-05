@@ -1,0 +1,12 @@
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+
+.frame{
+    width: 100%;
+    min-height: 190px;
+    color-scheme: light; 
+    /* Not sure why color-scheme needs to be set but it works? */
+}
