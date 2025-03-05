@@ -4,7 +4,7 @@ A blog for showcasing my C++ and unreal engine work.
 
 
 # Todo
-- Add images to blog posts view
+- Add "Featured" section on the home page instead of latest two 
 - Look through some examples
 - Roadmap
 - Logo
@@ -13,3 +13,10 @@ A blog for showcasing my C++ and unreal engine work.
 - Plugin pages
 - Game pages
 - fill out changelog
+
+
+
+Changelog
+- Add images to blog posts view
+- Wakatime Chart
+
