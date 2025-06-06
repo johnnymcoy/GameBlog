@@ -1,0 +1,77 @@
+---
+title: 'Inventory'
+date: '2025-04-01'
+tags: ['unreal engine', 'plugin', 'multiplayer', 'C++']
+draft: false
+summary: 'Creating a Component for Inventory Management.'
+images: ['/static/images/blog/spaceAdventure/2025/InventoryComponent.webp']
+---
+
+# Inventory Component
+
+This component is designed to integrate seamlessly with other gameplay systems,
+broadcasting events to both UI elements and networked clients when inventory changes occur.
+Imagine the “inventory” in a game as a backpack or toolbox that holds everything your character carries, like weapons, health packs, crafting materials, or keys.
+An inventory component simply:
+
+- Keeps track of every item the player has collected.
+- Handles picking up new items when the player finds them in the world.
+- Allows dropping items into the game world.
+- Communicates changes to the HUD.
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div>
+    ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+    showing the player that they can pick up the
+    weapon.](/static/images/blog/spaceAdventure/2025/InventoryComponent.webp)
+  </div>
+</div>
+
+---
+
+# Key Features
+
+#### Picking Up Items
+
+When your character touches or interacts with an item in the world (a health pack on the ground, a dropped weapon, etc.),
+the component asks “Is it okay to pick this up?” If yes, it adds that item to the internal list.
+
+#### Dropping Items
+
+If you decide you no longer need something, or want to give it to someone else,
+the component takes that item out of your “backpack” and actually spawns it back into the world.
+
+#### Selecting Items
+
+Many games let you cycle through your items (for example, choosing between a gun, a grenade, or a healing potion).
+The inventory system keeps track of which item is “active” so the character knows exactly what to use next.
+
+#### Weight & Capacity (Optional)
+
+In some games, you can’t carry unlimited items, you might have a weight limit or a maximum number of slots.
+This component can be extended to check those rules before allowing you to pick something up.
+
+#### User Interface Updates
+
+As soon as you add, remove, or change which item you’ve selected, the component sends out a simple “inventory changed” signal.
+A separate UI widget listens for that signal and instantly refreshes what you see.
+
+#### Multiplayer-Ready
+
+Just place items in the world, let players collect or drop them, and the component makes sure everyone sees the same thing.
+
+---
+
+# Next Steps and Improvements
+
+#### Saving/Loading
+
+    Implement Saving and Loading Logic so that inventories carry over between play sessions.
+
+#### Weight & Grid Checks
+
+Consult maximum allowed weight and slot count, to decide whether the player can pick up a given item.
+
+#### UI Design
+
+    Create proper UI for Inventory with Grid Layout
