@@ -1,0 +1,87 @@
+---
+title: 'Dialogue System'
+date: '2025-03-01'
+tags: ['unreal engine', 'plugin', 'multiplayer', 'C++']
+draft: false
+summary: 'Creating a Dialogue System.'
+images: ['/static/images/blog/spaceAdventure/2025/DialogueSystem/DialogueScreen_01.webp']
+---
+
+# Dialogue System
+
+This system builds ontop of the Interaction System I have to let Characters have text conversations with each other.
+Most of the UI elements were borrowed from an existing Dialogue System: "Defender: Animated Dialogue", but when going
+through that project I found it lacking a lot of features.
+So I decided to create my own version.
+
+My Dialogue System Currently Contains:
+
+- Dialogue between two Characters
+- In Game Dialogue bubbles (Not full screen)
+- Allosw dropping items into the game world.
+- Communicates changes to the HUD.
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div>
+    ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+    showing the player that they can pick up the
+    weapon.](/static/images/blog/spaceAdventure/2025/DialogueSystem/DialogueScreen_01.webp)
+  </div>
+</div>
+
+---
+
+# Key Features
+
+#### Dialogue Screen
+
+When your character talks to another character, a full screen dialogue menu is visible. Player movement is stopped, and sound and character images are shown.
+
+#### In-World Dialogue Bubbles
+
+Intead of only seeing dialogue when in a full screen UI, NPCs can simply chat with small dialouge bubbles about there head.
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div>
+    ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+    showing the player that they can pick up the
+    weapon.](/static/images/blog/spaceAdventure/2025/DialogueSystem/DialogueBubbles.webp)
+  </div>
+</div>
+
+#### Branching Options
+
+There are “requirements” for certain lines to show up. For instance, if the player’s trust level is high enough,
+a new dialogue option appears. Or if they’re carrying a special item, they can unlock a unique response.
+All of this is defined in a simple spreadsheet-like table that non-programmers can edit.
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div>
+    ![A low poly Character looking at a weapon on the ground, a floating UI element is above it
+    showing the player that they can pick up the
+    weapon.](/static/images/blog/spaceAdventure/2025/DialogueSystem/DialogueScreen_02.webp)
+  </div>
+</div>
+#### Voice & Sound Integration Whenever a line of dialogue appears, the system can play a matching sound
+cue or voice clip. This lets you add personality to NPCs without having to tweak low-level code or manually
+trigger audio events each time.
+
+---
+
+# Next Steps and Improvements
+
+#### Multiplayer-Ready
+
+    The Dialogue System is currently not Replicated.
+
+#### Saving/Loading
+
+    Implement Saving and Loading Logic so that dialogue options carry over between play sessions.
+
+#### Dialogue Triggered Events
+
+    Have events that can be triggered once a dialogue is comeplete, i.e. A character dies after talking to them.
+
+#### UI Design
+
+    Create proper UI for Inventory with Grid Layout
